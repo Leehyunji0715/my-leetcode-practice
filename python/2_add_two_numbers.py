@@ -13,6 +13,7 @@ class Solution(object):
         head = result
 
         while l1 and l2:
+            
             if (l1.val < 0 and l2.val >= 0) :
                 dsum = l2.val
             elif (l2.val < 0 and l1.val >= 0) :
@@ -24,10 +25,11 @@ class Solution(object):
             
             result.val = (dsum + carrier) % 10
             
-            carrier = int (dsum + carrier/ 10)
+            carrier = int ( (dsum + carrier)/ 10)
             newNode = ListNode(0, None)
 
             result.next = newNode
+            #result = result.next
 
             if (l1.next != None) : 
                 l1 = l1.next
@@ -58,7 +60,3 @@ class Solution(object):
             else:
                 result = result.next
         return head
-
-
-        
-
